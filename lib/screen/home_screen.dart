@@ -199,15 +199,24 @@ class leftPart extends StatelessWidget {
           ),
           Text(
             "Clear",
-            style: Theme.of(context).textTheme.headlineSmall!,
+            style: Theme.of(context)
+                .textTheme
+                .headlineSmall!
+                .copyWith(fontSize: 12),
           ),
           Text(
             DateFormat('EEEE').format(DateTime.now()),
-            style: Theme.of(context).textTheme.headlineSmall!,
+            style: Theme.of(context)
+                .textTheme
+                .headlineSmall!
+                .copyWith(fontSize: 12),
           ),
           Text(
             DateFormat('MMMM d').format(DateTime.now()),
-            style: Theme.of(context).textTheme.headlineSmall!,
+            style: Theme.of(context)
+                .textTheme
+                .headlineSmall!
+                .copyWith(fontSize: 12),
           ),
         ]),
       ),
