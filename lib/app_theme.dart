@@ -48,26 +48,26 @@ class ThemeProvider with ChangeNotifier {
     return ThemeData(
         brightness: isLightTheme ? Brightness.light : Brightness.dark,
         scaffoldBackgroundColor:
-            isLightTheme ? AppColors.yellow : AppColors.black,
+            isLightTheme ? AppColors.lightRed : AppColors.black,
         textTheme: TextTheme(
             headlineLarge: GoogleFonts.stickNoBills(
               fontSize: 70,
               fontWeight: FontWeight.w600,
-              color: isLightTheme ? AppColors.black : AppColors.orange,
+              color: isLightTheme ? AppColors.black : AppColors.darkRed,
             ),
             headlineMedium: GoogleFonts.robotoCondensed(
               fontWeight: FontWeight.w500,
-              color: isLightTheme ? AppColors.black : AppColors.orange,
+              color: isLightTheme ? AppColors.black : AppColors.darkRed,
             )));
   }
 
   ThemeMode themeMode() {
     return ThemeMode(
       gradientColors: isLightTheme
-          ? [AppColors.yellow, AppColors.yellowDark]
+          ? [AppColors.lightRed, AppColors.darkRed]
           : [AppColors.black, AppColors.black],
-      switchColor: isLightTheme ? AppColors.black : AppColors.orange,
-      thumbColor: isLightTheme ? AppColors.orange : AppColors.black,
+      switchColor: isLightTheme ? AppColors.black : AppColors.darkRed,
+      thumbColor: isLightTheme ? AppColors.darkRed : AppColors.black,
       switchBgColor: isLightTheme
           ? AppColors.black.withOpacity(.1)
           : AppColors.grey.withOpacity(.3),
