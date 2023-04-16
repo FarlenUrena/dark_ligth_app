@@ -39,7 +39,7 @@ dependencies:
   shared_preferences: ^2.0.15
   google_fonts: ^3.0.1
   intl: ^0.17.0
-  
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -56,6 +56,9 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  assets:
+    - assets/images/Logo-UNA.png
+
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

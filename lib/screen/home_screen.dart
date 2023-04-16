@@ -139,86 +139,130 @@ class leftPart extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Text(
-            DateFormat('H').format(DateTime.now()),
-            style: Theme.of(context).textTheme.headlineLarge,
-          ),
-          SizedBox(
-            width: size.width * .2,
-            child: const Divider(
-              height: 0,
-              thickness: 1,
-              color: AppColors.white,
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              height: size.height * 0.3,
+              width: size.width * 0.4,
+              decoration: BoxDecoration(
+                color: themeProvider.themeMode().switchColor,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    DateFormat('H').format(DateTime.now()),
+                    style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
+                  const SizedBox(height: 4),
+                  SizedBox(
+                    width: size.width * 0.2,
+                    child: const Divider(
+                      //height: 0,
+                      thickness: 1,
+                      color: AppColors.white,
+                    ),
+                  ),
+                  Text(
+                    DateFormat('mm').format(DateTime.now()),
+                    style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+                          color: Colors.white,
+                        ),
+                  ),
+                ],
+              ),
             ),
-          ),
-          Text(
-            DateFormat('mm').format(DateTime.now()),
-            style: Theme.of(context)
-                .textTheme
-                .headlineLarge!
-                .copyWith(color: AppColors.white),
-          ),
-          const Spacer(),
-          const Text(
-            "Light Dark\nPersonal\nSwitch",
-            style: TextStyle(
-              fontSize: 40,
-              fontWeight: FontWeight.bold,
+            const Spacer(),
+            const Image(
+              image: AssetImage('assets/images/Logo-UNA.png'),
+              width: 150,
+              height: 100,
             ),
-          ),
-          const Spacer(),
-          Container(
-            width: size.width * .2,
-            height: size.height * .2,
-            decoration: BoxDecoration(
-              color: themeProvider.themeMode().switchColor,
-              borderRadius: BorderRadius.circular(8),
+            const Spacer(),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text(
+                "Light Dark App\n\n\nStudent:\nFarlen Ureña",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+                textAlign: TextAlign.center,
+              ),
             ),
-            child: const Icon(
-              Icons.nights_stay_outlined,
-              size: 50,
-              color: AppColors.white,
+            const Spacer(),
+            Container(
+              alignment: Alignment.centerRight,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    const SizedBox(height: 12),
+                    Container(
+                      width: size.width * 0.2,
+                      height: size.height * 0.1,
+                      decoration: BoxDecoration(
+                        color: themeProvider.themeMode().switchColor,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Icon(
+                        Icons.nights_stay_outlined,
+                        size: size.height * 0.1,
+                        color: Colors.white,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    SizedBox(
+                      width: size.width * 0.2,
+                      child: const Divider(
+                        //height: 0,
+                        thickness: 1,
+                        color: AppColors.white,
+                      ),
+                    ),
+                    Text(
+                      "30\u00B0C",
+                      style: Theme.of(context)
+                          .textTheme
+                          .headlineMedium!
+                          .copyWith(color: AppColors.white),
+                    ),
+                    Text(
+                      "Clear",
+                      style: Theme.of(context)
+                          .textTheme
+                          .headlineSmall!
+                          .copyWith(fontSize: 12),
+                    ),
+                    Text(
+                      DateFormat('EEEE').format(DateTime.now()),
+                      style: Theme.of(context)
+                          .textTheme
+                          .headlineSmall!
+                          .copyWith(fontSize: 12),
+                    ),
+                    Text(
+                      DateFormat('MMMM d').format(DateTime.now()),
+                      style: Theme.of(context)
+                          .textTheme
+                          .headlineSmall!
+                          .copyWith(fontSize: 12),
+                      textAlign: TextAlign.right,
+                    ),
+                  ],
+                ),
+              ),
             ),
-          ),
-          SizedBox(
-            width: size.width * .2,
-            child: const Divider(
-              //height: 0,
-              thickness: 1,
-              color: AppColors.white,
-            ),
-          ),
-          Text(
-            "30\u00B0C",
-            style: Theme.of(context)
-                .textTheme
-                .headlineMedium!
-                .copyWith(color: AppColors.white),
-          ),
-          Text(
-            "Clear",
-            style: Theme.of(context)
-                .textTheme
-                .headlineSmall!
-                .copyWith(fontSize: 12),
-          ),
-          Text(
-            DateFormat('EEEE').format(DateTime.now()),
-            style: Theme.of(context)
-                .textTheme
-                .headlineSmall!
-                .copyWith(fontSize: 12),
-          ),
-          Text(
-            DateFormat('MMMM d').format(DateTime.now()),
-            style: Theme.of(context)
-                .textTheme
-                .headlineSmall!
-                .copyWith(fontSize: 12),
-          ),
-        ]),
+          ],
+        ),
       ),
     );
   }
